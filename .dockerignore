@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+build
+.git
+.gitignore
+.dockerignore
+.github
+README.md
+LICENSE
+.env*
+!.env.example
+pnpm-lock.yaml
+pnpm-workspace.yaml
+biome.json
+vitest.config.ts
+tests
