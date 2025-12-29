@@ -6,7 +6,7 @@
   "homepage": "https://github.com/Super1Windcloud",
   "scripts": {
     "taze": "npx taze latest -w",
-    "dev": "next dev",
+    "dev": "next dev -p 33333",
     "build": "next build",
     "start": "pnpm build && next start",
     "clean": "npx rimraf node_modules",
