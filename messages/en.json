@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "title": "Welcome to Next.js Template",
+    "description": "Modern, production-ready template with Shadcn UI and Tailwind CSS v4."
+  },
+  "Navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "title": "欢迎使用 Next.js 模板",
+    "description": "集成 Shadcn UI 和 Tailwind CSS v4 的现代生产就绪模板。"
+  },
+  "Navigation": {
+    "home": "首页",
+    "dashboard": "仪表板",
+    "profile": "个人资料"
+  }
+}
