@@ -22,7 +22,6 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
-import { supabase } from "@/lib/supabase-client";
 
 // Types
 interface User {

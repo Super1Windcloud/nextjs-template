@@ -11,7 +11,6 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { useCounterStore } from "@/lib/store/counterStore";
-import { supabase } from "@/lib/supabase-client";
 
 // Example function to fetch data from Supabase
 const fetchExampleData = async () => {

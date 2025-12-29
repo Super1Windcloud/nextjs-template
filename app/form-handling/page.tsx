@@ -9,7 +9,6 @@ import {
 	Info,
 	Lock,
 	Mail,
-	MapPin,
 	User,
 } from "lucide-react";
 import { useEffect, useState } from "react";

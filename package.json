@@ -10,9 +10,8 @@
     "build": "next build",
     "start": "pnpm build && next start",
     "clean": "npx rimraf node_modules",
-    "lint": "eslint",
-    "fix": "biome check --fix",
-    "migrate": "biome migrate  eslint --write",
+    "lint": "biome check",
+    "fix": "biome check --write",
     "shadcn": "npx shadcn@latest add -a -y -o",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -76,6 +75,7 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
     "@tailwindcss/postcss": "^4.1.18",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
@@ -85,8 +85,6 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
     "@vitest/ui": "^4.0.16",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "16.0.1",
     "husky": "^9.1.7",
     "jsdom": "^27.4.0",
     "tailwindcss": "^4.1.18",

@@ -208,7 +208,7 @@ export default function DashboardPage() {
 								>
 									{pieData.map((entry, index) => (
 										<Cell
-											key={`cell-${index}`}
+											key={entry.name}
 											fill={COLORS[index % COLORS.length]}
 										/>
 									))}
