@@ -16,6 +16,7 @@ export default function Home() {
 							width={100}
 							height={20}
 							priority
+							suppressHydrationWarning
 						/>
 					</div>
 
@@ -122,6 +123,7 @@ export default function Home() {
 												alt="Vercel logomark"
 												width={16}
 												height={16}
+												suppressHydrationWarning
 											/>
 											Deploy Now
 										</Button>
