@@ -20,6 +20,7 @@ export const NextAuthConfig = {
 		GitHubProvider({
 			clientId: process.env.AUTH_GITHUB_ID ?? "",
 			clientSecret: process.env.AUTH_GITHUB_SECRET ?? "",
+
 		}),
 		GoogleProvider({
 			clientId: process.env.AUTH_GOOGLE_ID ?? "",
