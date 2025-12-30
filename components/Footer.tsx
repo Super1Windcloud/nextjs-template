@@ -6,10 +6,10 @@ export function Footer() {
 					© {new Date().getFullYear()} NextTemplate. All rights reserved.
 				</p>
 				<div className="flex space-x-6 text-sm text-muted-foreground">
-					<a href="#" className="hover:text-primary transition-colors">
+					<a href="/privacy" className="hover:text-primary transition-colors">
 						Privacy Policy
 					</a>
-					<a href="#" className="hover:text-primary transition-colors">
+					<a href="/terms" className="hover:text-primary transition-colors">
 						Terms of Service
 					</a>
 					<a
