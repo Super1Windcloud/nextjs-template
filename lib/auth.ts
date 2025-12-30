@@ -1,5 +1,5 @@
-// This file provides client-side auth utilities
-// For server-side authentication, use the handlers in the API routes
+'use server';
+
 
 export type { Session, User } from "next-auth";
 export { getServerSession } from "next-auth";
