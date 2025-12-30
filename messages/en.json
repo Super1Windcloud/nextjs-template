@@ -6,6 +6,13 @@
   "Navigation": {
     "home": "Home",
     "dashboard": "Dashboard",
-    "profile": "Profile"
+    "profile": "Profile",
+    "integration": "Demo",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "settings": "Settings"
+  },
+  "Common": {
+    "logo": "NextTemplate"
   }
 }

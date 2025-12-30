@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 import NextAuthProvider from "@/components/NextAuthProvider";
 import { QueryProvider } from "@/components/QueryProvider";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -83,7 +85,7 @@ export default async function LocaleLayout({
 	return (
 		<html lang={locale} suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
 			>
 				<NextIntlClientProvider messages={messages}>
 					<ThemeProvider
@@ -104,7 +106,11 @@ export default async function LocaleLayout({
 							shadow="0 0 10px var(--primary),0 0 5px var(--primary)"
 						/>
 						<NextAuthProvider>
-							<QueryProvider>{children}</QueryProvider>
+							<QueryProvider>
+								<Navbar />
+								<main className="flex-1">{children}</main>
+								<Footer />
+							</QueryProvider>
 						</NextAuthProvider>
 						<Toaster position="top-right" richColors closeButton />
 					</ThemeProvider>

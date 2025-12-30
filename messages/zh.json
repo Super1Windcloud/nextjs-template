@@ -6,6 +6,13 @@
   "Navigation": {
     "home": "首页",
     "dashboard": "仪表板",
-    "profile": "个人资料"
+    "profile": "个人资料",
+    "integration": "示例",
+    "signIn": "登录",
+    "signOut": "退出",
+    "settings": "设置"
+  },
+  "Common": {
+    "logo": "Next模板"
   }
 }
