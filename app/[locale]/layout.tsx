@@ -4,9 +4,9 @@ import "../globals.css";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import NextAuthProvider from "@/components/NextAuthProvider";
-import { QueryProvider } from "@/components/QueryProvider";
+import NextTopLoader from "nextjs-toploader";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
 
 const geistSans = Geist({
@@ -19,10 +19,40 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-	title: "Next.js Template",
-	description: "A modern Next.js template with i18n and Theme support",
-};
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
+	const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:33333";
+
+	return {
+		title: {
+			template: "%s | Next.js Template",
+			default: "Next.js + shadcn Template",
+		},
+		description:
+			"A modern, production-ready Next.js 16 template with i18n and Theme support",
+		metadataBase: new URL(baseUrl),
+		alternates: {
+			canonical: `/${locale}`,
+			languages: {
+				en: "/en",
+				zh: "/zh",
+			},
+		},
+		openGraph: {
+			type: "website",
+			locale: locale === "zh" ? "zh_CN" : "en_US",
+			url: `${baseUrl}/${locale}`,
+			siteName: "Next.js Template",
+		},
+		twitter: {
+			card: "summary_large_image",
+		},
+	};
+}
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
@@ -60,12 +90,24 @@ export default async function LocaleLayout({
 						enableSystem
 						disableTransitionOnChange
 					>
+						<NextTopLoader
+							color="var(--primary)"
+							initialPosition={0.08}
+							crawlSpeed={200}
+							height={3}
+							crawl={true}
+							showSpinner={false}
+							easing="ease"
+							speed={200}
+							shadow="0 0 10px var(--primary),0 0 5px var(--primary)"
+						/>
 						<NextAuthProvider>
 							<QueryProvider>{children}</QueryProvider>
 						</NextAuthProvider>
+						<Toaster position="top-right" richColors closeButton />
 					</ThemeProvider>
 				</NextIntlClientProvider>
-			</body>
+			</body>{" "}
 		</html>
 	);
 }
