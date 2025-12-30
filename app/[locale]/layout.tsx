@@ -1,15 +1,15 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
+import NextAuthProvider from "@/components/NextAuthProvider";
+import { QueryProvider } from "@/components/QueryProvider";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
-import NextAuthProvider from "@/components/NextAuthProvider";
-import {QueryProvider} from "@/components/QueryProvider";
-import type {Metadata} from "next";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -109,7 +109,7 @@ export default async function LocaleLayout({
 						<Toaster position="top-right" richColors closeButton />
 					</ThemeProvider>
 				</NextIntlClientProvider>
-			</body>{" "}
+			</body>
 		</html>
 	);
 }
